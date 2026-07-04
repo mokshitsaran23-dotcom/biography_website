@@ -4,108 +4,140 @@
 
 let bios = [];
 
-document.getElementById("bioForm").addEventListener("submit", function (e) {
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    e.preventDefault();
+document.querySelectorAll('.nav-btn').forEach((link) => {
+    const linkPage = link.getAttribute('href')?.split('/').pop() || '';
 
-    // Get Form Values
-    const personName = document.getElementById("personName").value.trim();
-    const category = document.getElementById("category").value;
-    const country = document.getElementById("country").value.trim();
-    const dob = document.getElementById("dob").value;
-    const imageUrl = document.getElementById("imageUrl").value.trim();
-    const submittedBy = document.getElementById("submittedBy").value.trim();
-    const biography = document.getElementById("biography").value.trim();
+    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        link.classList.add('active');
+    }
+});
 
-    // ==========================
-    // VALIDATION
-    // ==========================
+const typingText = document.getElementById("typing-text");
 
-    // Person Name
-    if (personName === "") {
-        alert("Please enter the person's full name.");
-        return;
+if (typingText) {
+    const fullText = "Welcome to Biography Hub 🌍";
+    let index = 0;
+
+    function typeText() {
+        typingText.textContent = fullText.slice(0, index);
+        index += 1;
+
+        if (index <= fullText.length) {
+            setTimeout(typeText, 90);
+        }
     }
 
-    // Only letters and spaces
-    const namePattern = /^[A-Za-z\s]+$/;
+    typeText();
+}
 
-    if (!namePattern.test(personName)) {
-        alert("Person name should contain only letters.");
-        return;
-    }
+const bioForm = document.getElementById("bioForm");
 
-    // Category
-    if (category === "") {
-        alert("Please select a category.");
-        return;
-    }
+if (bioForm) {
+    bioForm.addEventListener("submit", function (e) {
 
-    // Country
-    if (country === "") {
-        alert("Please enter the country.");
-        return;
-    }
+        e.preventDefault();
 
-    // Date of Birth
-    if (dob === "") {
-        alert("Please select the birth date.");
-        return;
-    }
+        // Get Form Values
+        const personName = document.getElementById("personName").value.trim();
+        const category = document.getElementById("category").value;
+        const country = document.getElementById("country").value.trim();
+        const dob = document.getElementById("dob").value;
+        const imageUrl = document.getElementById("imageUrl").value.trim();
+        const submittedBy = document.getElementById("submittedBy").value.trim();
+        const biography = document.getElementById("biography").value.trim();
 
-    // Submitted By
-    if (submittedBy === "") {
-        alert("Please enter your name.");
-        return;
-    }
+        // ==========================
+        // VALIDATION
+        // ==========================
 
-    // Biography
-    if (biography === "") {
-        alert("Please write the biography.");
-        return;
-    }
-
-    if (biography.length < 100) {
-        alert("Biography should contain at least 100 characters.");
-        return;
-    }
-
-    // Image URL (Optional)
-    if (imageUrl !== "") {
-
-        try {
-            new URL(imageUrl);
-        } catch {
-            alert("Please enter a valid image URL.");
+        // Person Name
+        if (personName === "") {
+            alert("Please enter the person's full name.");
             return;
         }
 
-    }
+        // Only letters and spaces
+        const namePattern = /^[A-Za-z\s]+$/;
 
-    // ==========================
-    // Create Object
-    // ==========================
+        if (!namePattern.test(personName)) {
+            alert("Person name should contain only letters.");
+            return;
+        }
 
-    const newBio = {
+        // Category
+        if (category === "") {
+            alert("Please select a category.");
+            return;
+        }
 
-        personName,
-        category,
-        country,
-        dob,
-        imageUrl,
-        submittedBy,
-        biography,
-        status: "Pending Review"
+        // Country
+        if (country === "") {
+            alert("Please enter the country.");
+            return;
+        }
 
-    };
+        // Date of Birth
+        if (dob === "") {
+            alert("Please select the birth date.");
+            return;
+        }
 
-    bios.push(newBio);
+        // Submitted By
+        if (submittedBy === "") {
+            alert("Please enter your name.");
+            return;
+        }
 
-    console.log(bios);
+        // Biography
+        if (biography === "") {
+            alert("Please write the biography.");
+            return;
+        }
 
-    alert("Biography submitted successfully!\n\nStatus: Pending Review");
+        if (biography.length < 100) {
+            alert("Biography should contain at least 100 characters.");
+            return;
+        }
 
-    // Clear Form
-    this.reset();
+        // Image URL (Optional)
+        if (imageUrl !== "") {
 
-});
+            try {
+                new URL(imageUrl);
+            } catch {
+                alert("Please enter a valid image URL.");
+                return;
+            }
+
+        }
+
+        // ==========================
+        // Create Object
+        // ==========================
+
+        const newBio = {
+
+            personName,
+            category,
+            country,
+            dob,
+            imageUrl,
+            submittedBy,
+            biography,
+            status: "Pending Review"
+
+        };
+
+        bios.push(newBio);
+
+        console.log(bios);
+
+        alert("Biography submitted successfully!\n\nStatus: Pending Review");
+
+        // Clear Form
+        this.reset();
+
+    });
+}
