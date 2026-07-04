@@ -24,11 +24,11 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 18px 24px;
+    padding: 12px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     background: rgba(15,23,42,0.85);
     backdrop-filter: blur(12px);
@@ -185,47 +185,52 @@ button {
 /* ABOUT PAGE */
 /* ========================= */
 
-.about-hero{
-    height:70vh;
-    background:linear-gradient(rgba(15,23,42,.75),
-    rgba(15,23,42,.75)),
-    url("images/about-bg.jpg");
-    background-size:cover;
-    background-position:center;
-
+.about-hero,
+.submit-hero,
+.categories-page-hero{
+    height:42vh;
+    min-height:260px;
+    padding:24px 20px;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-
     color:white;
+    background-size:cover;
+    background-position:center;
+}
+
+.about-hero{
+    background:linear-gradient(rgba(15,23,42,.75),
+    rgba(15,23,42,.75)),
+    url("images/about-bg.jpg");
 }
 
 .hero-content{
-    width:70%;
+    width:72%;
 }
 
 .hero-content h1{
 
-    font-size:55px;
-    margin-bottom:20px;
+    font-size:42px;
+    margin-bottom:8px;
 }
 
 .hero-content p{
 
-    font-size:20px;
-    line-height:1.8;
+    font-size:17px;
+    line-height:1.6;
 }
 
 .mission{
 
-    padding:90px 10%;
+    padding:55px 10%;
 }
 
 .mission h2{
 
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:28px;
 }
 
 .mission-container{
@@ -252,14 +257,14 @@ button {
 
 .features{
 
-    padding:90px 10%;
+    padding:55px 10%;
     background:#f7f9fc;
 }
 
 .features h2{
 
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:28px;
 }
 
 .feature-grid{
@@ -289,7 +294,7 @@ button {
 
 .developer{
 
-    padding:90px 10%;
+    padding:55px 10%;
 }
 
 .developer h2{
@@ -327,17 +332,9 @@ footer{
     padding:40px;
 }
 .submit-hero{
-    height:60vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
     background:linear-gradient(rgba(15,23,42,.75),
     rgba(15,23,42,.75)),
     url("images/submit-bg.jpg");
-    background-size:cover;
-    background-position:center;
 }
 
 .guidelines,
@@ -413,27 +410,11 @@ footer{
    CATEGORIES PAGE
 ========================== */
 
-.category-hero{
-
-    height:60vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    color:white;
-
+.categories-page-hero{
     background:
     linear-gradient(rgba(15,23,42,.75),
     rgba(15,23,42,.75)),
     url("images/category-bg.jpg");
-
-    background-size:cover;
-    background-position:center;
 }
 
 
@@ -655,17 +636,22 @@ margin:8px 0;
     position: sticky;
     top: 0;
     padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .logo {
-    width: 100%;
-    text-align: center;
+    width: auto;
+    text-align: left;
+    flex: 1;
   }
 
   .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-left: 8px;
   }
 
   .navbar {
