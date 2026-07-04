@@ -652,6 +652,8 @@ margin:8px 0;
 
 @media (max-width: 768px) {
   header {
+    position: sticky;
+    top: 0;
     padding: 14px 16px;
   }
 
@@ -677,7 +679,7 @@ margin:8px 0;
     border-top: 1px solid rgba(255,255,255,0.15);
   }
 
-  .menu-toggle-input:checked + .navbar {
+  .menu-toggle-input:checked ~ .navbar {
     display: flex;
   }
 
@@ -687,7 +689,19 @@ margin:8px 0;
   }
 
   .hero {
-    padding: 140px 16px 40px;
+    padding: 40px 16px 40px;
+    min-height: auto;
+  }
+
+  .home-bg {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .about-hero {
+    height: auto;
+    min-height: 60vh;
+    padding: 40px 16px;
   }
 
   .section,
