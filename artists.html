@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientists | Biography Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Biography Hub
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</label>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="categories.html" class="nav-btn active">Categories</a>
+        <a href="submit.html" class="nav-btn">Submit Biography</a>
+        <a href="about.html" class="nav-btn">About</a>
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="category-hero">
+
+    <div class="hero-content">
+
+        <h1>Famous Artists</h1>
+
+        <p>
+            Discover the lives and masterpieces of legendary artists
+            whose creativity and imagination transformed the world of art.
+        </p>
+
+    </div>
+
+</section>
+<!-- Search -->
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Artists...">
+
+</section>
+
+
+<section class="biography-section" id="bioContainer">
+
+    <!-- Leonardo da Vinci -->
+
+    <div class="bio-card">
+
+        <img src="images/leonardo-da-vinci.jpg" alt="Leonardo da Vinci">
+
+        <div class="bio-content">
+
+            <h2>Leonardo da Vinci</h2>
+
+            <p><strong>Born:</strong> 15 April 1452</p>
+
+            <p><strong>Died:</strong> 2 May 1519</p>
+
+            <p><strong>Nationality:</strong> Italian</p>
+
+            <p><strong>Profession:</strong> Painter, Inventor & Scientist</p>
+
+            <p>
+                Leonardo da Vinci was one of the greatest artists of the
+                Renaissance. His extraordinary talents in painting,
+                engineering, anatomy, and science made him one of the
+                most influential figures in history.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>Painted the Mona Lisa</li>
+
+                <li>Created The Last Supper</li>
+
+                <li>Designed Early Flying Machines</li>
+
+                <li>Master of Renaissance Art</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Pablo Picasso -->
+
+    <div class="bio-card">
+
+        <img src="images/pablo-picasso.jpg" alt="Pablo Picasso">
+
+        <div class="bio-content">
+
+            <h2>Pablo Picasso</h2>
+
+            <p><strong>Born:</strong> 25 October 1881</p>
+
+            <p><strong>Died:</strong> 8 April 1973</p>
+
+            <p><strong>Nationality:</strong> Spanish</p>
+
+            <p><strong>Profession:</strong> Painter & Sculptor</p>
+
+            <p>
+                Pablo Picasso was one of the most influential artists
+                of the 20th century. He co-founded the Cubist movement
+                and created thousands of paintings, sculptures, and
+                drawings during his lifetime.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>Co-founder of Cubism</li>
+
+                <li>Created Guernica</li>
+
+                <li>Produced Over 20,000 Artworks</li>
+
+                <li>One of the Most Influential Modern Artists</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+<footer>
+
+<h3>Biography Hub</h3>
+
+<p>Explore • Learn • Inspire</p>
+
+<p>© 2026 Biography Hub</p>
+
+</footer>
+
+<script>
+
+const search = document.getElementById("searchInput");
+
+search.addEventListener("keyup",function(){
+
+let filter = search.value.toLowerCase();
+
+let cards = document.querySelectorAll(".bio-card");
+
+cards.forEach(card=>{
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(filter))
+
+card.style.display="flex";
+
+else
+
+card.style.display="none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

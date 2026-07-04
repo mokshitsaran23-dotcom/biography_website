@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientists | Biography Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Biography Hub
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</label>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="categories.html" class="nav-btn active">Categories</a>
+        <a href="submit.html" class="nav-btn">Submit Biography</a>
+        <a href="about.html" class="nav-btn">About</a>
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="category-hero">
+
+    <div class="hero-content">
+
+        <h1>Actors</h1>
+
+        <p>
+            Explore the lives, achievements, and inspiring journeys
+            of legendary actors who have shaped the world of cinema.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Search -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Actor...">
+
+</section>
+
+<section class="biography-section" id="bioContainer">
+
+    <!-- Leonardo DiCaprio -->
+
+    <div class="bio-card">
+
+        <img src="images/leonardo.jpg" alt="Leonardo DiCaprio">
+
+        <div class="bio-content">
+
+            <h2>Leonardo DiCaprio</h2>
+
+            <p><strong>Born:</strong> 11 November 1974</p>
+
+            <p><strong>Nationality:</strong> American</p>
+
+            <p><strong>Occupation:</strong> Actor & Film Producer</p>
+
+            <p>
+                Leonardo DiCaprio is one of Hollywood's most celebrated actors,
+                known for his powerful performances in films such as Titanic,
+                Inception, The Revenant, and The Wolf of Wall Street.
+            </p>
+
+            <h4>Achievements</h4>
+
+            <ul>
+                <li>Academy Award for Best Actor</li>
+                <li>Golden Globe Awards Winner</li>
+                <li>Environmental Activist</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Tom Hanks -->
+
+    <div class="bio-card">
+
+        <img src="images/tom-hanks.jpg" alt="Tom Hanks">
+
+        <div class="bio-content">
+
+            <h2>Tom Hanks</h2>
+
+            <p><strong>Born:</strong> 9 July 1956</p>
+
+            <p><strong>Nationality:</strong> American</p>
+
+            <p><strong>Occupation:</strong> Actor & Filmmaker</p>
+
+            <p>
+                Tom Hanks is one of the most respected actors in cinema,
+                famous for Forrest Gump, Cast Away, Saving Private Ryan,
+                Apollo 13, and the Toy Story series.
+            </p>
+
+            <h4>Achievements</h4>
+
+            <ul>
+                <li>Two Academy Awards</li>
+                <li>Presidential Medal of Freedom</li>
+                <li>Four Golden Globe Awards</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+<footer>
+
+<h3>Biography Hub</h3>
+
+<p>Explore • Learn • Inspire</p>
+
+<p>© 2026 Biography Hub</p>
+
+</footer>
+
+<script>
+
+const search = document.getElementById("searchInput");
+
+search.addEventListener("keyup", function () {
+
+    let filter = search.value.toLowerCase();
+
+    let cards = document.querySelectorAll(".bio-card");
+
+    cards.forEach(card => {
+
+        let text = card.innerText.toLowerCase();
+
+        card.style.display = text.includes(filter) ? "flex" : "none";
+
+    });
+
+});
+
+</script>
+</body>
+
+</html>

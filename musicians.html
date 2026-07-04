@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientists | Biography Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Biography Hub
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</label>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="categories.html" class="nav-btn active">Categories</a>
+        <a href="submit.html" class="nav-btn">Submit Biography</a>
+        <a href="about.html" class="nav-btn">About</a>
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="category-hero">
+
+    <div class="hero-content">
+
+        <h1>Legendary Musicians</h1>
+
+        <p>
+            Discover the lives and achievements of world-famous
+            musicians whose talent and creativity have inspired
+            millions across generations.
+        </p>
+
+    </div>
+
+</section>
+<!-- Search -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Musicians...">
+
+</section>
+
+<section class="biography-section" id="bioContainer">
+
+    <!-- Michael Jackson -->
+
+    <div class="bio-card">
+
+        <img src="images/michael-jackson.jpg" alt="Michael Jackson">
+
+        <div class="bio-content">
+
+            <h2>Michael Jackson</h2>
+
+            <p><strong>Born:</strong> 29 August 1958</p>
+
+            <p><strong>Died:</strong> 25 June 2009</p>
+
+            <p><strong>Nationality:</strong> American</p>
+
+            <p><strong>Profession:</strong> Singer, Songwriter & Dancer</p>
+
+            <p>
+                Michael Jackson, known as the "King of Pop," was one
+                of the most influential entertainers in history. His
+                music, dance performances, and innovative music videos
+                transformed the global music industry.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>Over 400 Million Records Sold Worldwide</li>
+
+                <li>13 Grammy Awards</li>
+
+                <li>Rock and Roll Hall of Fame Inductee</li>
+
+                <li>One of the Best-Selling Music Artists of All Time</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- A. R. Rahman -->
+
+    <div class="bio-card">
+
+        <img src="images/ar-rahman.jpg" alt="A. R. Rahman">
+
+        <div class="bio-content">
+
+            <h2>A. R. Rahman</h2>
+
+            <p><strong>Born:</strong> 6 January 1967</p>
+
+            <p><strong>Nationality:</strong> Indian</p>
+
+            <p><strong>Profession:</strong> Music Composer & Singer</p>
+
+            <p>
+                A. R. Rahman is one of India's most celebrated music
+                composers. His work in Indian and international cinema
+                has earned worldwide recognition for its originality
+                and excellence.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>Academy Award (Oscar) Winner</li>
+
+                <li>Two Grammy Awards</li>
+
+                <li>Padma Bhushan Recipient</li>
+
+                <li>Composer of Slumdog Millionaire Soundtrack</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+<footer>
+
+<h3>Biography Hub</h3>
+
+<p>Explore • Learn • Inspire</p>
+
+<p>© 2026 Biography Hub</p>
+
+</footer>
+
+<script>
+
+const search = document.getElementById("searchInput");
+
+search.addEventListener("keyup",function(){
+
+let filter = search.value.toLowerCase();
+
+let cards = document.querySelectorAll(".bio-card");
+
+cards.forEach(card=>{
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(filter))
+
+card.style.display="flex";
+
+else
+
+card.style.display="none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

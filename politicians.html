@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientists | Biography Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Biography Hub
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</label>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="categories.html" class="nav-btn active">Categories</a>
+        <a href="submit.html" class="nav-btn">Submit Biography</a>
+        <a href="about.html" class="nav-btn">About</a>
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="category-hero">
+
+    <div class="hero-content">
+
+        <h1>Political Leaders</h1>
+
+        <p>
+            Explore the lives of influential political leaders who
+            shaped history through leadership, vision, and service
+            to their nations.
+        </p>
+
+    </div>
+
+</section>
+<!-- Search -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Political Leaders...">
+
+</section>
+
+<section class="biography-section" id="bioContainer">
+
+    <!-- Mahatma Gandhi -->
+
+    <div class="bio-card">
+
+        <img src="images/mahatma-gandhi.jpg" alt="Mahatma Gandhi">
+
+        <div class="bio-content">
+
+            <h2>Mahatma Gandhi</h2>
+
+            <p><strong>Born:</strong> 2 October 1869</p>
+
+            <p><strong>Died:</strong> 30 January 1948</p>
+
+            <p><strong>Nationality:</strong> Indian</p>
+
+            <p><strong>Profession:</strong> Lawyer & Political Leader</p>
+
+            <p>
+                Mahatma Gandhi led India's struggle for independence
+                through non-violent civil disobedience. His philosophy
+                of truth and peace inspired freedom movements across
+                the world.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>Leader of India's Independence Movement</li>
+
+                <li>Promoted Non-Violence (Ahimsa)</li>
+
+                <li>Inspired Civil Rights Movements Worldwide</li>
+
+                <li>Known as the "Father of the Nation" in India</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Nelson Mandela -->
+
+    <div class="bio-card">
+
+        <img src="images/nelson-mandela.jpg" alt="Nelson Mandela">
+
+        <div class="bio-content">
+
+            <h2>Nelson Mandela</h2>
+
+            <p><strong>Born:</strong> 18 July 1918</p>
+
+            <p><strong>Died:</strong> 5 December 2013</p>
+
+            <p><strong>Nationality:</strong> South African</p>
+
+            <p><strong>Profession:</strong> Political Leader & Activist</p>
+
+            <p>
+                Nelson Mandela fought against apartheid and became
+                South Africa's first democratically elected President.
+                He dedicated his life to equality, justice, and
+                reconciliation.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>First Black President of South Africa</li>
+
+                <li>Nobel Peace Prize (1993)</li>
+
+                <li>Leader Against Apartheid</li>
+
+                <li>Global Symbol of Peace and Equality</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+<h3>Biography Hub</h3>
+
+<p>Explore • Learn • Inspire</p>
+
+<p>© 2026 Biography Hub</p>
+
+</footer>
+
+<script>
+
+const search = document.getElementById("searchInput");
+
+search.addEventListener("keyup",function(){
+
+let filter = search.value.toLowerCase();
+
+let cards = document.querySelectorAll(".bio-card");
+
+cards.forEach(card=>{
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(filter))
+
+card.style.display="flex";
+
+else
+
+card.style.display="none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientists | Biography Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Biography Hub
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</label>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="categories.html" class="nav-btn active">Categories</a>
+        <a href="submit.html" class="nav-btn">Submit Biography</a>
+        <a href="about.html" class="nav-btn">About</a>
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="category-hero">
+
+    <div class="hero-content">
+
+        <h1>Sports Personalities</h1>
+
+        <p>
+            Discover the inspiring journeys of legendary athletes
+            who have achieved greatness through dedication,
+            hard work, and excellence in sports.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Search -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Sports Personality...">
+
+</section>
+
+<!-- Scientists -->
+
+<section class="biography-section" id="bioContainer">
+
+    <!-- Virat Kohli -->
+
+    <div class="bio-card">
+
+        <img src="images/virat-kohli.jpg" alt="Virat Kohli">
+
+        <div class="bio-content">
+
+            <h2>Virat Kohli</h2>
+
+            <p><strong>Born:</strong> 5 November 1988</p>
+
+            <p><strong>Nationality:</strong> Indian</p>
+
+            <p><strong>Profession:</strong> Cricketer</p>
+
+            <p>
+                Virat Kohli is regarded as one of the greatest
+                batsmen in modern cricket. He has captained India
+                across all formats and has broken numerous batting
+                records throughout his career.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>ICC Cricketer of the Year</li>
+
+                <li>Padma Shri Award</li>
+
+                <li>Multiple ICC ODI Records</li>
+
+                <li>Over 25,000 International Runs</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Lionel Messi -->
+
+    <div class="bio-card">
+
+        <img src="images/lionel-messi.jpg" alt="Lionel Messi">
+
+        <div class="bio-content">
+
+            <h2>Lionel Messi</h2>
+
+            <p><strong>Born:</strong> 24 June 1987</p>
+
+            <p><strong>Nationality:</strong> Argentine</p>
+
+            <p><strong>Profession:</strong> Football Player</p>
+
+            <p>
+                Lionel Messi is widely regarded as one of the
+                greatest football players of all time. His
+                exceptional dribbling, vision, and goal-scoring
+                ability have earned him worldwide recognition.
+            </p>
+
+            <h4>Major Achievements</h4>
+
+            <ul>
+
+                <li>FIFA World Cup Champion (2022)</li>
+
+                <li>Multiple Ballon d'Or Winner</li>
+
+                <li>UEFA Champions League Winner</li>
+
+                <li>Highest Goal Scorer for Argentina</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+<h3>Biography Hub</h3>
+
+<p>Explore • Learn • Inspire</p>
+
+<p>© 2026 Biography Hub</p>
+
+</footer>
+
+<script>
+
+const search = document.getElementById("searchInput");
+
+search.addEventListener("keyup",function(){
+
+let filter = search.value.toLowerCase();
+
+let cards = document.querySelectorAll(".bio-card");
+
+cards.forEach(card=>{
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(filter))
+
+card.style.display="flex";
+
+else
+
+card.style.display="none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

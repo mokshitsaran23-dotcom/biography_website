@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientists | Biography Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Biography Hub
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</label>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="categories.html" class="nav-btn active">Categories</a>
+        <a href="submit.html" class="nav-btn">Submit Biography</a>
+        <a href="about.html" class="nav-btn">About</a>
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="category-hero">
+
+    <div class="hero-content">
+
+        <h1>Scientists</h1>
+
+        <p>
+            Discover the brilliant scientists who changed the world
+            through their inventions, discoveries and research.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Search -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Scientist...">
+
+</section>
+
+<!-- Scientists -->
+
+<section class="biography-section" id="bioContainer">
+
+<div class="bio-card">
+
+<img src="images/einstein.jpg" alt="Albert Einstein">
+
+<div class="bio-content">
+
+<h2>Albert Einstein</h2>
+
+<p><strong>Born:</strong> 14 March 1879</p>
+
+<p><strong>Nationality:</strong> German</p>
+
+<p><strong>Occupation:</strong> Theoretical Physicist</p>
+
+<p>
+
+Albert Einstein developed the Theory of Relativity and
+received the Nobel Prize in Physics in 1921. His work
+transformed modern science.
+
+</p>
+
+<h4>Achievements</h4>
+
+<ul>
+
+<li>Theory of Relativity</li>
+
+<li>Nobel Prize in Physics</li>
+
+<li>Mass–Energy Equation (E = mc²)</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="bio-card">
+
+<img src="images/marie-curie.jpg" alt="Marie Curie">
+
+<div class="bio-content">
+
+<h2>Marie Curie</h2>
+
+<p><strong>Born:</strong> 7 November 1867</p>
+
+<p><strong>Nationality:</strong> Polish-French</p>
+
+<p><strong>Occupation:</strong> Physicist & Chemist</p>
+
+<p>
+
+Marie Curie pioneered research on radioactivity and became
+the first woman to win a Nobel Prize and the first person
+to win two Nobel Prizes.
+
+</p>
+
+<h4>Achievements</h4>
+
+<ul>
+
+<li>Discovered Radium</li>
+
+<li>Two Nobel Prizes</li>
+
+<li>Pioneer of Radioactivity</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Biography Hub</h3>
+
+<p>Explore • Learn • Inspire</p>
+
+<p>© 2026 Biography Hub</p>
+
+</footer>
+
+<script>
+
+const search = document.getElementById("searchInput");
+
+search.addEventListener("keyup",function(){
+
+let filter = search.value.toLowerCase();
+
+let cards = document.querySelectorAll(".bio-card");
+
+cards.forEach(card=>{
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(filter))
+
+card.style.display="flex";
+
+else
+
+card.style.display="none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

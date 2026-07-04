@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Biography</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Biography Hub</div>
+  <nav>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</label>
+
+    <nav class="navbar">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="categories.html" class="nav-btn">Categories</a>
+    <a href="submit.html" class="nav-btn">Submit Biography</a>
+    <a href="about.html" class="nav-btn">About</a>
+</nav>
+  </nav>
+</header>
+<section class="submit-hero">
+
+    <div class="hero-content">
+
+        <h1>Submit a Biography</h1>
+
+        <p>
+            Know someone with an inspiring story?
+            Share their journey with our community.
+            Every submission is reviewed before publication.
+        </p>
+
+    </div>
+
+</section>
+<section class="guidelines">
+
+<h2>Submission Guidelines</h2>
+
+<div class="guide-grid">
+
+<div class="guide-card">
+<h3>✔ Accurate Information</h3>
+<p>Provide factual and verifiable information.</p>
+</div>
+
+<div class="guide-card">
+<h3>📷 Include an Image</h3>
+<p>Add a photo URL if available.</p>
+</div>
+
+<div class="guide-card">
+<h3>🚫 No Copyright Content</h3>
+<p>Do not copy biographies from other websites.</p>
+</div>
+
+<div class="guide-card">
+<h3>📝 Write Clearly</h3>
+<p>Use simple and meaningful language.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="submit-form-section">
+
+<h2>Biography Submission Form</h2>
+
+<form id="bioForm">
+
+    <input type="text" id="personName" placeholder="Person's Full Name">
+
+    <select id="category">
+        <option value="">Select Category</option>
+        <option>Scientists</option>
+        <option>Actors</option>
+        <option>Sports</option>
+        <option>Politicians</option>
+        <option>Writers</option>
+        <option>Technology</option>
+    </select>
+
+    <input type="text" id="country" placeholder="Country">
+
+    <input type="date" id="dob">
+
+    <input type="url" id="imageUrl" placeholder="Image URL">
+
+    <input type="text" id="submittedBy" placeholder="Submitted By">
+
+    <textarea id="biography" rows="8" placeholder="Write the biography here..."></textarea>
+
+    <button type="submit">Submit Biography</button>
+
+</form>
+
+</section>
+<section class="process">
+
+    <h2>What Happens After Submission?</h2>
+
+    <div class="process-container">
+
+        <div class="step">
+            1️⃣<br>Submit
+        </div>
+
+        <div class="step">
+            2️⃣<br>Review
+        </div>
+
+        <div class="step">
+            3️⃣<br>Approval
+        </div>
+
+        <div class="step">
+            4️⃣<br>Published
+        </div>
+
+    </div>
+
+</section>
+<script src="script.js"></script>
+</body>
+</html>
